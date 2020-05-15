@@ -1,0 +1,31 @@
+{
+  "name": "emergency_call",
+  "version": "1.0.0",
+  "description": "A Website to send emergency message to the Medical/Fire/Police Departments.",
+  "main": "Home.html",
+  "scripts": {
+    "start": "npm run lite",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lite": "lite-server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/500075374/Emergency_call.git"
+  },
+  "author": "Utkarsh Gupta",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/500075374/Emergency_call/issues"
+  },
+  "homepage": "https://github.com/500075374/Emergency_call#readme",
+  "devDependencies": {
+    "lite-server": "^2.5.4"
+  },
+  "dependencies": {
+    "bootstrap": "^4.0.0",
+    "bootstrap-social": "^5.1.1",
+    "font-awesome": "^4.7.0",
+    "jquery": "^3.3.1",
+    "popper.js": "^1.12.9"
+  }
+}
