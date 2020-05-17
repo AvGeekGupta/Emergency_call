@@ -2,11 +2,18 @@
   "name": "emergency_call",
   "version": "1.0.0",
   "description": "A Website to send emergency message to the Medical/Fire/Police Departments.",
-  "main": "Home.html",
+  "main": "index.html",
   "scripts": {
     "start": "npm run lite",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "lite": "lite-server"
+    "lite": "lite-server",
+    "scss": "node-sass -o CSS/ CSS/",
+    "watch:scss": "onchange 'CSS/*scss' -- npm run scss",
+    "clean": "rimraf Distribution",
+    "copyfonts": "copyfiles -f node_modules/font-awesome/fonts/* Distribution/fonts",
+    "copyimage": "copyfiles -f Images/* Distribution/Images",
+    "usemin": "usemin contact_us.html -d Distribution --htmlmin -o Distribution/contact_us.html && usemin about_us.html -d Distribution --htmlmin -o Distribution/about_us.html && usemin index.html -d Distribution --htmlmin -o Distribution/index.html && usemin fire.html -d Distribution --htmlmin -o Distribution/fire.html && usemin login.html -d Distribution --htmlmin -o Distribution/login.html && usemin medical.html -d Distribution --htmlmin -o Distribution/medical.html && usemin police.html -d Distribution --htmlmin -o Distribution/police.html",
+    "build": "npm run clean && npm run copyimage && npm run copyfonts && npm run usemin"
   },
   "repository": {
     "type": "git",
@@ -19,13 +26,20 @@
   },
   "homepage": "https://github.com/500075374/Emergency_call#readme",
   "devDependencies": {
-    "lite-server": "^2.5.4"
+    "cssmin": "^0.4.3",
+    "htmlmin": "0.0.7",
+    "lite-server": "^2.5.4",
+    "node-sass": "^4.14.1",
+    "onchange": "^7.0.2",
+    "rimraf": "^3.0.2",
+    "uglifyjs": "^2.4.11",
+    "usemin-cli": "^0.6.0"
   },
   "dependencies": {
-    "bootstrap": "^4.3.1",
+    "bootstrap": "^4.0.0",
     "bootstrap-social": "^5.1.1",
     "font-awesome": "^4.7.0",
-    "jquery": "^3.5.0",
+    "jquery": "^3.3.1",
     "popper.js": "^1.12.9"
   }
 }
